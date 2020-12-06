@@ -41,8 +41,14 @@ app.use(function (req, res, next) {
  */
 
 const authRouter = require("./routes/auth");
+const SentenceRouter = require("./routes/Sentences");
+const WordRouter = require("./routes/Words");
+
 
 app.use("/api/auth", authRouter);
+app.use("/api/sentences", SentenceRouter);
+app.use("/api/words", WordRouter);
+
 
 // 404 Middleware
 app.use((req, res, next) => {
